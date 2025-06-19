@@ -1,1 +1,0 @@
-(()=>{"use strict";console.log("RANDOW FUNCTION"),document.body.innerHTML="<div>Hello World</div>"})();
