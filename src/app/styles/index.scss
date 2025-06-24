@@ -4,7 +4,7 @@
 @use "themes/normal";
 
 .app {
-  font: var(--font-m);
+  font-size: var(--font-size-m);
   background: var(--bg-color);
   color: var(--primary-color);
   min-height: 100vh;
