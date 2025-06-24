@@ -6,6 +6,5 @@ export default {
     "import-notation": "string",
     "color-function-notation": "legacy",
     'selector-class-pattern': null,
-    "declaration-block-no-duplicate-custom-properties": null
   },
 };

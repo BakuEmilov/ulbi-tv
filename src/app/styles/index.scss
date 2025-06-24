@@ -1,7 +1,7 @@
-@use "./resert";
-@use "./variables/global";
-@use "./themes/normal";
-@use "./themes/dark";
+@use "resert";
+@use "variables/global";
+@use "themes/dark";
+@use "themes/normal";
 
 .app {
   font: var(--font-m);

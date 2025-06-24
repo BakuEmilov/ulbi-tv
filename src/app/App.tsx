@@ -4,7 +4,6 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { AppRouter } from "./providers/router";
 import { NavBar } from "widgets/NavBar";
 import { Sidebar } from "widgets/Sidebar";
-import { useTranslation } from "react-i18next";
 
 const App = () => {
   const { theme } = useTheme();
