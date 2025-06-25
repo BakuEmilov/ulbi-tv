@@ -24,6 +24,7 @@
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "@types/webpack": "^5.28.5",
+    "@types/webpack-bundle-analyzer": "^4.7.0",
     "@types/webpack-dev-server": "^4.7.1",
     "css-loader": "^7.1.2",
     "eslint": "^9.29.0",
@@ -45,6 +46,7 @@
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.34.1",
     "webpack": "^5.99.9",
+    "webpack-bundle-analyzer": "^4.10.2",
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.2"
   },

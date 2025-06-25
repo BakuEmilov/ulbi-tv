@@ -4,7 +4,7 @@ import { Button } from "shared/ui/Button/Button";
 
 export const BugButton = () => {
   const [error, setError] = useState(false);
-  const { t } = useTranslation("mainPage")
+  const { t } = useTranslation("mainPage");
 
   useEffect(() => {
     if (error) {
