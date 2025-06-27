@@ -1,19 +1,19 @@
 import HtmlWebpackPlugin from "html-webpack-plugin";
-import webpack, { WebpackPluginInstance } from "webpack";
-import { BuildOptions } from "./types/config";
-import MiniCssExtractPLugin from "mini-css-extract-plugin";
+import webpack from "webpack";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
+import { BuildOptions } from "./types/config";
 
-export default function buildPlugins({
+export function buildPlugins({
   paths,
   isDev,
-}: BuildOptions): WebpackPluginInstance[] {
+}: BuildOptions): webpack.WebpackPluginInstance[] {
   return [
     new HtmlWebpackPlugin({
       template: paths.html,
     }),
     new webpack.ProgressPlugin(),
-    new MiniCssExtractPLugin({
+    new MiniCssExtractPlugin({
       filename: "css/[name].[contenthash:8].css",
       chunkFilename: "css/[name].[contenthash:8].css",
     }),
@@ -22,7 +22,7 @@ export default function buildPlugins({
     }),
     new webpack.HotModuleReplacementPlugin(),
     new BundleAnalyzerPlugin({
-      openAnalyzer: false
-    })
+      openAnalyzer: false,
+    }),
   ];
 }
