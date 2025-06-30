@@ -24,18 +24,24 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+        if: always()
 
       - name: Lint TypeScript
         run: npm run lint:ts
+        if: always()
 
       - name: Lint SCSS
         run: npm run lint:scss
+        if: always()
 
       - name: Build project
         run: npm run build:prod
+        if: always()
 
       - name: Run unit tests
         run: npm run test:unit
+        if: always()
 
       - name: Run storybook
         run: npm run storybook:build  
+        if: always()
