@@ -11,7 +11,7 @@ interface renderWithTranslationOption {
 
 export function renderWithTranslation(
   component: ReactNode,
-  options: renderWithTranslationOption
+  options?: renderWithTranslationOption
 ) {
   const { initialState } = options;
   return render(
