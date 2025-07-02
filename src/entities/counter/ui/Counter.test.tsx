@@ -12,7 +12,9 @@ describe("Counter", () => {
   });
 
   test("increment", async () => {
-    renderWithTranslation(<Counter />);
+    renderWithTranslation(<Counter />, {
+      initialState: { counter: { value: 10 } },
+    });
 
     await userEvent.click(screen.getByTestId("increment-btn"));
 
@@ -20,7 +22,9 @@ describe("Counter", () => {
   });
 
   test("decrement", async () => {
-    renderWithTranslation(<Counter />);
+    renderWithTranslation(<Counter />, {
+      initialState: { counter: { value: 10 } },
+    });
 
     await userEvent.click(screen.getByTestId("decrement-btn"));
 

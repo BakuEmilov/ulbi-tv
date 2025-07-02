@@ -13,7 +13,7 @@ export function renderWithTranslation(
   component: ReactNode,
   options?: renderWithTranslationOption
 ) {
-  const { initialState } = options;
+  const { initialState } = options || {};
   return render(
     <StoreProvider initialState={initialState}>
       <MemoryRouter>
