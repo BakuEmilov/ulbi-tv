@@ -4,7 +4,6 @@ export default {
   rules: {
     "function-url-quotes": null, 
     "import-notation": "string",
-    "color-function-notation": "legacy",
     'selector-class-pattern': null,
   },
 };
