@@ -1,9 +1,13 @@
+// eslint-disable-next-line no-undef
 const fs = require("fs");
+// eslint-disable-next-line no-undef
 const jsonServer = require("json-server");
+// eslint-disable-next-line no-undef
 const path = require("path");
 
 const server = jsonServer.create();
 
+// eslint-disable-next-line no-undef
 const router = jsonServer.router(path.resolve(__dirname, "db.json"));
 
 server.use(jsonServer.defaults({}));
@@ -22,6 +26,7 @@ server.post("/login", (req, res) => {
   try {
     const { username, password } = req.body;
     const db = JSON.parse(
+      // eslint-disable-next-line no-undef
       fs.readFileSync(path.resolve(__dirname, "db.json"), "UTF-8")
     );
     const { users = [] } = db;
