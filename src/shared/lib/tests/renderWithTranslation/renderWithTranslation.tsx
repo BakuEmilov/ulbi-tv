@@ -6,7 +6,7 @@ import { MemoryRouter } from "react-router-dom";
 import i18nForTests from "shared/config/i18n/i18nForTests";
 
 interface renderWithTranslationOption {
-  initialState?: StateSchema;
+  initialState?: Partial<StateSchema>;
 }
 
 export function renderWithTranslation(
