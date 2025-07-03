@@ -13,6 +13,9 @@ export default defineConfig([
     files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
     plugins: { js },
     extends: ["js/recommended"],
+    env: {
+      node: true,
+    },
   },
   {
     files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
@@ -27,6 +30,7 @@ export default defineConfig([
       "@typescript-eslint/no-unused-vars": "warn",
       "i18next/no-literal-string": ["error", { markupOnly: true }],
       "react/display-name": "off",
+      "@typescript-eslint/no-require-imports": "off",
     },
   },
 ]);
