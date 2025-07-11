@@ -9,27 +9,34 @@ import { getLoginState } from "features/authByUsername/model/selectors/getLoginS
 import { loginActions } from "features/authByUsername/model/slice/loginSlice";
 import { loginByUsername } from "features/authByUsername/model/services/loginByUsername/loginByUsername";
 import { useAppDispatch } from "shared/hooks/useDispatch";
+import { memo, useCallback } from "react";
 
 interface LoginFormProps {
   className?: string;
 }
 
-export const LoginForm = ({ className }: LoginFormProps) => {
+export const LoginForm = memo(({ className }: LoginFormProps) => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const { username, password, error, isLoading } = useSelector(getLoginState);
 
-  const onChangeUsername = (value: string) => {
-    dispatch(loginActions.setUsername(value));
-  };
+  const onChangeUsername = useCallback(
+    (value: string) => {
+      dispatch(loginActions.setUsername(value));
+    },
+    [dispatch]
+  );
 
-  const onChangePassword = (value: string) => {
-    dispatch(loginActions.setPassword(value));
-  };
+  const onChangePassword = useCallback(
+    (value: string) => {
+      dispatch(loginActions.setPassword(value));
+    },
+    [dispatch]
+  );
 
-  const onLoginClick = () => {
+  const onLoginClick = useCallback(() => {
     dispatch(loginByUsername({ username, password }));
-  };
+  }, [dispatch, password, username]);
 
   return (
     <div className={classNames(cls.LoginForm, {}, [className])}>
@@ -64,4 +71,4 @@ export const LoginForm = ({ className }: LoginFormProps) => {
       </Button>
     </div>
   );
-};
+});
